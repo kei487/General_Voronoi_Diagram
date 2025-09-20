@@ -1,0 +1,57 @@
+Phase 0: Project scaffolding
+- Create directories: src/, include/, data/, scripts/, tests/, cmake/
+- Configure CMake: C++17, options (BUILD_TESTS, BUILD_TOOLS), warnings, RelWithDebInfo, LTO optional
+- Dependencies: OpenCV (core,imgproc,highgui), Boost (graph), nlohmann_json or yaml-cpp
+- Targets: library (libgvd_topo) and CLI tool (gvd_topo_cli)
+
+Phase 1: Core data models and I/O
+- OccupancyGrid: width, height, resolution, origin(x,y,theta), data(std::vector<int8_t>), enum Cell
+- Loaders: from image (PNG/PGM via OpenCV), from ROS-like struct
+- Preprocessing: binarization(threshold), morphology open/close, optional inflation
+
+Phase 2: Distance Transform (EDT)
+- Use OpenCV cv::distanceTransform (L2) to compute float distance map
+- Optional fallback: Meijster algorithm (pure C++) if OpenCV disabled
+
+Phase 3: GVD extraction
+- Ridge detection by non-maximum suppression along gradient (Sobel)
+- Alternative: multi-source BFS label Voronoi; ridge where labels meet
+- Outputs: binary GVD mask and traced polylines
+- Visualization: overlay GVD on original map
+
+Phase 4: Pruning and topology extraction
+- Prune spurs < min_branch_length; drop tiny components
+- Nodes: junctions(degree>=3), endpoints(degree==1); merge nearby nodes (merge_radius)
+- Edges: trace simple paths between nodes; compute polyline length
+
+Phase 5: Graph model and serialization
+- Types: TopoNode{id,x,y}, TopoEdge{id,u,v,length,polyline}
+- Use Boost Graph Library adjacency_list with bundled properties
+- Serialize to JSON (nlohmann_json) or YAML; provide deserialization
+
+Phase 6: CLI tool (gvd_topo_cli)
+- Options: --input, --resolution, --origin, --occ-thresh, --morph, --morph-ksize,
+          --prune-length, --merge-radius, --out-map, --out-gvd, --no-opencv
+- Log timings per phase
+
+Phase 7: Performance and quality
+- Optimize memory access; avoid copies; consider OpenMP for BFS/labeling
+- Benchmarks on ~1000x1000 maps; target few seconds
+
+Phase 8: ROS-ready design (no ROS dependency yet)
+- Keep adapters for nav_msgs/OccupancyGrid-like data
+- Group parameters; structs convertible to ROS msgs
+
+Phase 9: Tests and samples
+- Synthetic maps (corridors/rooms); golden JSON outputs; end-to-end test image->JSON+PNG
+
+Deliverables
+- Library: include/gvd_topo/*.hpp, src/*.cpp
+- CLI: build/bin/gvd_topo_cli
+- Artifacts: data/ examples, outputs; README usage
+
+Timeline (indicative)
+- Week 1: Phases 0-2
+- Week 2: Phases 3-4
+- Week 3: Phases 5-6
+- Week 4: Phases 7-9 and polish
