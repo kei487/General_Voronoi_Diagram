@@ -174,3 +174,4 @@ void CliApplication::printStatistics(const GvdResult& gvd_result, const Topologi
 }
 
 } // namespace gvd_topo
+

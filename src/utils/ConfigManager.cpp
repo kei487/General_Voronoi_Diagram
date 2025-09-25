@@ -155,3 +155,4 @@ void ConfigManager::mergeConfigurations(const ConfigOptions& file_config) {
 }
 
 } // namespace gvd_topo
+

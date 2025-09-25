@@ -4,11 +4,11 @@
 # Input configuration
 input:
   # Input image file path (equivalent to --input/-i)
-  image_file: "room.pgm"
+  image_file: "anime.pgm"
   
   # YAML map file path (equivalent to --yaml/-y)
   # If specified, this takes precedence over image_file
-  yaml_file: "map_tsudanuma.yaml"
+  #yaml_file: "map_tsudanuma.yaml"
   
   # Resolution in meters per pixel (equivalent to --resolution)
   resolution: 0.05
@@ -19,13 +19,13 @@ input:
 # Output configuration
 output:
   # Output map file path (equivalent to --out-map)
-  map_file: "output_topo.json"
+  map_file: "output/anime_topo.json"
   
   # Output GVD visualization image (equivalent to --out-gvd)
-  gvd_image: "output_gvd.png"
+  gvd_image: "output/anime_gvd.png"
   
   # Output topological map visualization (equivalent to --out-topo-image)
-  topo_image: "output_topo.png"
+  topo_image: "output/anime_topo.png"
 
 # Benchmark configuration (for testing)
 benchmark:
