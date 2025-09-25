@@ -69,30 +69,30 @@ include CMakeFiles/regression_test.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/regression_test.dir/flags.make
 
-CMakeFiles/regression_test.dir/src/regression_test.cpp.o: CMakeFiles/regression_test.dir/flags.make
-CMakeFiles/regression_test.dir/src/regression_test.cpp.o: ../src/regression_test.cpp
-CMakeFiles/regression_test.dir/src/regression_test.cpp.o: CMakeFiles/regression_test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keitaro/cursor_ws/General_Voronoi_Diagram/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/regression_test.dir/src/regression_test.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/regression_test.dir/src/regression_test.cpp.o -MF CMakeFiles/regression_test.dir/src/regression_test.cpp.o.d -o CMakeFiles/regression_test.dir/src/regression_test.cpp.o -c /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/regression_test.cpp
+CMakeFiles/regression_test.dir/tools/regression_test.cpp.o: CMakeFiles/regression_test.dir/flags.make
+CMakeFiles/regression_test.dir/tools/regression_test.cpp.o: ../tools/regression_test.cpp
+CMakeFiles/regression_test.dir/tools/regression_test.cpp.o: CMakeFiles/regression_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keitaro/cursor_ws/General_Voronoi_Diagram/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/regression_test.dir/tools/regression_test.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/regression_test.dir/tools/regression_test.cpp.o -MF CMakeFiles/regression_test.dir/tools/regression_test.cpp.o.d -o CMakeFiles/regression_test.dir/tools/regression_test.cpp.o -c /home/keitaro/cursor_ws/General_Voronoi_Diagram/tools/regression_test.cpp
 
-CMakeFiles/regression_test.dir/src/regression_test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/regression_test.dir/src/regression_test.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/regression_test.cpp > CMakeFiles/regression_test.dir/src/regression_test.cpp.i
+CMakeFiles/regression_test.dir/tools/regression_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/regression_test.dir/tools/regression_test.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keitaro/cursor_ws/General_Voronoi_Diagram/tools/regression_test.cpp > CMakeFiles/regression_test.dir/tools/regression_test.cpp.i
 
-CMakeFiles/regression_test.dir/src/regression_test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/regression_test.dir/src/regression_test.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/regression_test.cpp -o CMakeFiles/regression_test.dir/src/regression_test.cpp.s
+CMakeFiles/regression_test.dir/tools/regression_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/regression_test.dir/tools/regression_test.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keitaro/cursor_ws/General_Voronoi_Diagram/tools/regression_test.cpp -o CMakeFiles/regression_test.dir/tools/regression_test.cpp.s
 
 # Object files for target regression_test
 regression_test_OBJECTS = \
-"CMakeFiles/regression_test.dir/src/regression_test.cpp.o"
+"CMakeFiles/regression_test.dir/tools/regression_test.cpp.o"
 
 # External object files for target regression_test
 regression_test_EXTERNAL_OBJECTS =
 
-bin/regression_test: CMakeFiles/regression_test.dir/src/regression_test.cpp.o
+bin/regression_test: CMakeFiles/regression_test.dir/tools/regression_test.cpp.o
 bin/regression_test: CMakeFiles/regression_test.dir/build.make
-bin/regression_test: lib/libgvd_topo.a
+bin/regression_test: lib/libgvd_topo_core.a
 bin/regression_test: /usr/lib/gcc/x86_64-linux-gnu/11/libgomp.so
 bin/regression_test: /usr/lib/x86_64-linux-gnu/libpthread.a
 bin/regression_test: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.4.5.4d

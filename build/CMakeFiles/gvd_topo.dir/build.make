@@ -83,97 +83,17 @@ CMakeFiles/gvd_topo.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gvd_topo.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/main.cpp -o CMakeFiles/gvd_topo.dir/src/main.cpp.s
 
-CMakeFiles/gvd_topo.dir/src/OccupancyGrid.cpp.o: CMakeFiles/gvd_topo.dir/flags.make
-CMakeFiles/gvd_topo.dir/src/OccupancyGrid.cpp.o: ../src/OccupancyGrid.cpp
-CMakeFiles/gvd_topo.dir/src/OccupancyGrid.cpp.o: CMakeFiles/gvd_topo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keitaro/cursor_ws/General_Voronoi_Diagram/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/gvd_topo.dir/src/OccupancyGrid.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gvd_topo.dir/src/OccupancyGrid.cpp.o -MF CMakeFiles/gvd_topo.dir/src/OccupancyGrid.cpp.o.d -o CMakeFiles/gvd_topo.dir/src/OccupancyGrid.cpp.o -c /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/OccupancyGrid.cpp
-
-CMakeFiles/gvd_topo.dir/src/OccupancyGrid.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gvd_topo.dir/src/OccupancyGrid.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/OccupancyGrid.cpp > CMakeFiles/gvd_topo.dir/src/OccupancyGrid.cpp.i
-
-CMakeFiles/gvd_topo.dir/src/OccupancyGrid.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gvd_topo.dir/src/OccupancyGrid.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/OccupancyGrid.cpp -o CMakeFiles/gvd_topo.dir/src/OccupancyGrid.cpp.s
-
-CMakeFiles/gvd_topo.dir/src/GvdGenerator.cpp.o: CMakeFiles/gvd_topo.dir/flags.make
-CMakeFiles/gvd_topo.dir/src/GvdGenerator.cpp.o: ../src/GvdGenerator.cpp
-CMakeFiles/gvd_topo.dir/src/GvdGenerator.cpp.o: CMakeFiles/gvd_topo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keitaro/cursor_ws/General_Voronoi_Diagram/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/gvd_topo.dir/src/GvdGenerator.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gvd_topo.dir/src/GvdGenerator.cpp.o -MF CMakeFiles/gvd_topo.dir/src/GvdGenerator.cpp.o.d -o CMakeFiles/gvd_topo.dir/src/GvdGenerator.cpp.o -c /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/GvdGenerator.cpp
-
-CMakeFiles/gvd_topo.dir/src/GvdGenerator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gvd_topo.dir/src/GvdGenerator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/GvdGenerator.cpp > CMakeFiles/gvd_topo.dir/src/GvdGenerator.cpp.i
-
-CMakeFiles/gvd_topo.dir/src/GvdGenerator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gvd_topo.dir/src/GvdGenerator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/GvdGenerator.cpp -o CMakeFiles/gvd_topo.dir/src/GvdGenerator.cpp.s
-
-CMakeFiles/gvd_topo.dir/src/TopologyExtractor.cpp.o: CMakeFiles/gvd_topo.dir/flags.make
-CMakeFiles/gvd_topo.dir/src/TopologyExtractor.cpp.o: ../src/TopologyExtractor.cpp
-CMakeFiles/gvd_topo.dir/src/TopologyExtractor.cpp.o: CMakeFiles/gvd_topo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keitaro/cursor_ws/General_Voronoi_Diagram/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/gvd_topo.dir/src/TopologyExtractor.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gvd_topo.dir/src/TopologyExtractor.cpp.o -MF CMakeFiles/gvd_topo.dir/src/TopologyExtractor.cpp.o.d -o CMakeFiles/gvd_topo.dir/src/TopologyExtractor.cpp.o -c /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/TopologyExtractor.cpp
-
-CMakeFiles/gvd_topo.dir/src/TopologyExtractor.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gvd_topo.dir/src/TopologyExtractor.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/TopologyExtractor.cpp > CMakeFiles/gvd_topo.dir/src/TopologyExtractor.cpp.i
-
-CMakeFiles/gvd_topo.dir/src/TopologyExtractor.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gvd_topo.dir/src/TopologyExtractor.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/TopologyExtractor.cpp -o CMakeFiles/gvd_topo.dir/src/TopologyExtractor.cpp.s
-
-CMakeFiles/gvd_topo.dir/src/ros_adapters.cpp.o: CMakeFiles/gvd_topo.dir/flags.make
-CMakeFiles/gvd_topo.dir/src/ros_adapters.cpp.o: ../src/ros_adapters.cpp
-CMakeFiles/gvd_topo.dir/src/ros_adapters.cpp.o: CMakeFiles/gvd_topo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keitaro/cursor_ws/General_Voronoi_Diagram/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/gvd_topo.dir/src/ros_adapters.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gvd_topo.dir/src/ros_adapters.cpp.o -MF CMakeFiles/gvd_topo.dir/src/ros_adapters.cpp.o.d -o CMakeFiles/gvd_topo.dir/src/ros_adapters.cpp.o -c /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/ros_adapters.cpp
-
-CMakeFiles/gvd_topo.dir/src/ros_adapters.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gvd_topo.dir/src/ros_adapters.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/ros_adapters.cpp > CMakeFiles/gvd_topo.dir/src/ros_adapters.cpp.i
-
-CMakeFiles/gvd_topo.dir/src/ros_adapters.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gvd_topo.dir/src/ros_adapters.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/ros_adapters.cpp -o CMakeFiles/gvd_topo.dir/src/ros_adapters.cpp.s
-
-CMakeFiles/gvd_topo.dir/src/parameters.cpp.o: CMakeFiles/gvd_topo.dir/flags.make
-CMakeFiles/gvd_topo.dir/src/parameters.cpp.o: ../src/parameters.cpp
-CMakeFiles/gvd_topo.dir/src/parameters.cpp.o: CMakeFiles/gvd_topo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keitaro/cursor_ws/General_Voronoi_Diagram/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/gvd_topo.dir/src/parameters.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gvd_topo.dir/src/parameters.cpp.o -MF CMakeFiles/gvd_topo.dir/src/parameters.cpp.o.d -o CMakeFiles/gvd_topo.dir/src/parameters.cpp.o -c /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/parameters.cpp
-
-CMakeFiles/gvd_topo.dir/src/parameters.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gvd_topo.dir/src/parameters.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/parameters.cpp > CMakeFiles/gvd_topo.dir/src/parameters.cpp.i
-
-CMakeFiles/gvd_topo.dir/src/parameters.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gvd_topo.dir/src/parameters.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/parameters.cpp -o CMakeFiles/gvd_topo.dir/src/parameters.cpp.s
-
 # Object files for target gvd_topo
 gvd_topo_OBJECTS = \
-"CMakeFiles/gvd_topo.dir/src/main.cpp.o" \
-"CMakeFiles/gvd_topo.dir/src/OccupancyGrid.cpp.o" \
-"CMakeFiles/gvd_topo.dir/src/GvdGenerator.cpp.o" \
-"CMakeFiles/gvd_topo.dir/src/TopologyExtractor.cpp.o" \
-"CMakeFiles/gvd_topo.dir/src/ros_adapters.cpp.o" \
-"CMakeFiles/gvd_topo.dir/src/parameters.cpp.o"
+"CMakeFiles/gvd_topo.dir/src/main.cpp.o"
 
 # External object files for target gvd_topo
 gvd_topo_EXTERNAL_OBJECTS =
 
 lib/libgvd_topo.a: CMakeFiles/gvd_topo.dir/src/main.cpp.o
-lib/libgvd_topo.a: CMakeFiles/gvd_topo.dir/src/OccupancyGrid.cpp.o
-lib/libgvd_topo.a: CMakeFiles/gvd_topo.dir/src/GvdGenerator.cpp.o
-lib/libgvd_topo.a: CMakeFiles/gvd_topo.dir/src/TopologyExtractor.cpp.o
-lib/libgvd_topo.a: CMakeFiles/gvd_topo.dir/src/ros_adapters.cpp.o
-lib/libgvd_topo.a: CMakeFiles/gvd_topo.dir/src/parameters.cpp.o
 lib/libgvd_topo.a: CMakeFiles/gvd_topo.dir/build.make
 lib/libgvd_topo.a: CMakeFiles/gvd_topo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/keitaro/cursor_ws/General_Voronoi_Diagram/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library lib/libgvd_topo.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/keitaro/cursor_ws/General_Voronoi_Diagram/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library lib/libgvd_topo.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/gvd_topo.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gvd_topo.dir/link.txt --verbose=$(VERBOSE)
 

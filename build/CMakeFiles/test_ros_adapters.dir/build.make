@@ -69,30 +69,30 @@ include CMakeFiles/test_ros_adapters.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/test_ros_adapters.dir/flags.make
 
-CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.o: CMakeFiles/test_ros_adapters.dir/flags.make
-CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.o: ../src/test_ros_adapters.cpp
-CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.o: CMakeFiles/test_ros_adapters.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keitaro/cursor_ws/General_Voronoi_Diagram/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.o -MF CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.o.d -o CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.o -c /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/test_ros_adapters.cpp
+CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.o: CMakeFiles/test_ros_adapters.dir/flags.make
+CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.o: ../tests/unit/test_ros_adapters.cpp
+CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.o: CMakeFiles/test_ros_adapters.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/keitaro/cursor_ws/General_Voronoi_Diagram/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.o -MF CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.o.d -o CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.o -c /home/keitaro/cursor_ws/General_Voronoi_Diagram/tests/unit/test_ros_adapters.cpp
 
-CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/test_ros_adapters.cpp > CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.i
+CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/keitaro/cursor_ws/General_Voronoi_Diagram/tests/unit/test_ros_adapters.cpp > CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.i
 
-CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keitaro/cursor_ws/General_Voronoi_Diagram/src/test_ros_adapters.cpp -o CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.s
+CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/keitaro/cursor_ws/General_Voronoi_Diagram/tests/unit/test_ros_adapters.cpp -o CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.s
 
 # Object files for target test_ros_adapters
 test_ros_adapters_OBJECTS = \
-"CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.o"
+"CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.o"
 
 # External object files for target test_ros_adapters
 test_ros_adapters_EXTERNAL_OBJECTS =
 
-bin/test_ros_adapters: CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.o
+bin/test_ros_adapters: CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.o
 bin/test_ros_adapters: CMakeFiles/test_ros_adapters.dir/build.make
-bin/test_ros_adapters: lib/libgvd_topo.a
+bin/test_ros_adapters: lib/libgvd_topo_core.a
 bin/test_ros_adapters: /usr/lib/gcc/x86_64-linux-gnu/11/libgomp.so
 bin/test_ros_adapters: /usr/lib/x86_64-linux-gnu/libpthread.a
 bin/test_ros_adapters: /usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.4.5.4d

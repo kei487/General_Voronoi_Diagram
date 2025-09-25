@@ -36,61 +36,115 @@ if(USE_NATIVE_OPTIMIZATIONS)
     endif()
 endif()
 
-add_library(gvd_topo
-    src/main.cpp
-    src/OccupancyGrid.cpp
-    src/GvdGenerator.cpp
-    src/TopologyExtractor.cpp
+# Core library
+add_library(gvd_topo_core
+    src/core/OccupancyGrid.cpp
+    src/core/GvdGenerator.cpp
+    src/core/TopologyExtractor.cpp
+    src/core/Visualizer.cpp
+    src/io/YamlLoader.cpp
+    src/utils/ConfigManager.cpp
     src/ros_adapters.cpp
     src/parameters.cpp
 )
-target_compile_features(gvd_topo PRIVATE cxx_std_17)
+
+# Main library (entry point)
+add_library(gvd_topo
+    src/main.cpp
+)
+target_link_libraries(gvd_topo PRIVATE gvd_topo_core)
+# Configure core library
+target_compile_features(gvd_topo_core PRIVATE cxx_std_17)
 if(OpenMP_CXX_FOUND)
-    target_link_libraries(gvd_topo PUBLIC OpenMP::OpenMP_CXX)
-    target_compile_definitions(gvd_topo PUBLIC GVD_TOPO_WITH_OPENMP)
+    target_link_libraries(gvd_topo_core PUBLIC OpenMP::OpenMP_CXX)
+    target_compile_definitions(gvd_topo_core PUBLIC GVD_TOPO_WITH_OPENMP)
 endif()
 
+target_include_directories(gvd_topo_core PUBLIC ${CMAKE_SOURCE_DIR}/include)
+set_target_properties(gvd_topo_core PROPERTIES
+    ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
+)
+if(OpenCV_FOUND)
+    target_link_libraries(gvd_topo_core PUBLIC ${OpenCV_LIBS})
+endif()
+
+# Configure main library
+target_compile_features(gvd_topo PRIVATE cxx_std_17)
 target_include_directories(gvd_topo PUBLIC ${CMAKE_SOURCE_DIR}/include)
 set_target_properties(gvd_topo PROPERTIES
     ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
 )
-if(OpenCV_FOUND)
-    target_link_libraries(gvd_topo PUBLIC ${OpenCV_LIBS})
-endif()
 
 if(BUILD_TOOLS)
     add_executable(gvd_topo_cli
-        src/cli_main.cpp
+        src/cli/cli_main.cpp
+        src/cli/CliApplication.cpp
     )
-    target_link_libraries(gvd_topo_cli PRIVATE gvd_topo)
+    target_link_libraries(gvd_topo_cli PRIVATE gvd_topo_core)
     set_target_properties(gvd_topo_cli PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
     )
     
+    # Test tools
     add_executable(test_ros_adapters
-        src/test_ros_adapters.cpp
+        tests/unit/test_ros_adapters.cpp
     )
-    target_link_libraries(test_ros_adapters PRIVATE gvd_topo)
+    target_link_libraries(test_ros_adapters PRIVATE gvd_topo_core)
     set_target_properties(test_ros_adapters PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
     )
     
     add_executable(create_test_maps
-        src/create_test_maps.cpp
+        tools/create_test_maps.cpp
     )
-    target_link_libraries(create_test_maps PRIVATE gvd_topo)
+    target_link_libraries(create_test_maps PRIVATE gvd_topo_core)
     set_target_properties(create_test_maps PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
     )
     
     add_executable(regression_test
-        src/regression_test.cpp
+        tools/regression_test.cpp
     )
-    target_link_libraries(regression_test PRIVATE gvd_topo)
+    target_link_libraries(regression_test PRIVATE gvd_topo_core)
     set_target_properties(regression_test PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
     )
+    
+    # Debug tools
+    add_executable(debug_topology
+        tools/debug_tools/debug_topology.cpp
+    )
+    target_link_libraries(debug_topology PRIVATE gvd_topo_core)
+    set_target_properties(debug_topology PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+    )
+    
+    add_executable(debug_visualization
+        tools/debug_tools/debug_visualization.cpp
+    )
+    target_link_libraries(debug_visualization PRIVATE gvd_topo_core)
+    set_target_properties(debug_visualization PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+    )
+    
+    add_executable(debug_new_map
+        tools/debug_tools/debug_new_map.cpp
+    )
+    target_link_libraries(debug_new_map PRIVATE gvd_topo_core)
+    set_target_properties(debug_new_map PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+    )
+    
+    add_executable(optimized_new_map
+        tools/optimized_new_map.cpp
+    )
+    target_link_libraries(optimized_new_map PRIVATE gvd_topo_core)
+    set_target_properties(optimized_new_map PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
+    )
 endif()
+
 
 

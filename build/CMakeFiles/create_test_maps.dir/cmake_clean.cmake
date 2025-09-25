@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/create_test_maps.dir/src/create_test_maps.cpp.o"
-  "CMakeFiles/create_test_maps.dir/src/create_test_maps.cpp.o.d"
+  "CMakeFiles/create_test_maps.dir/tools/create_test_maps.cpp.o"
+  "CMakeFiles/create_test_maps.dir/tools/create_test_maps.cpp.o.d"
   "bin/create_test_maps"
   "bin/create_test_maps.pdb"
 )

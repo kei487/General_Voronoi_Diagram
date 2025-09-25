@@ -47,9 +47,14 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/gvd_topo_core.dir/DependInfo.cmake"
   "CMakeFiles/gvd_topo.dir/DependInfo.cmake"
   "CMakeFiles/gvd_topo_cli.dir/DependInfo.cmake"
   "CMakeFiles/test_ros_adapters.dir/DependInfo.cmake"
   "CMakeFiles/create_test_maps.dir/DependInfo.cmake"
   "CMakeFiles/regression_test.dir/DependInfo.cmake"
+  "CMakeFiles/debug_topology.dir/DependInfo.cmake"
+  "CMakeFiles/debug_visualization.dir/DependInfo.cmake"
+  "CMakeFiles/debug_new_map.dir/DependInfo.cmake"
+  "CMakeFiles/optimized_new_map.dir/DependInfo.cmake"
   )

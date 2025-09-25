@@ -1,7 +1,7 @@
 #pragma once
 
-#include "gvd_topo/OccupancyGrid.hpp"
-#include "gvd_topo/TopologyExtractor.hpp"
+#include "gvd_topo/core/OccupancyGrid.hpp"
+#include "gvd_topo/core/TopologyExtractor.hpp"
 #include <vector>
 
 namespace gvd_topo {

@@ -1,0 +1,60 @@
+# GVD Topology Generator Configuration File
+# This file contains all the command-line options in YAML format
+
+# Input configuration
+input:
+  # Input image file path (equivalent to --input/-i)
+  image_file: "room.pgm"
+  
+  # YAML map file path (equivalent to --yaml/-y)
+  # If specified, this takes precedence over image_file
+  yaml_file: "map_tsudanuma.yaml"
+  
+  # Resolution in meters per pixel (equivalent to --resolution)
+  resolution: 0.05
+  
+  # Occupancy threshold (equivalent to --occ-thresh)
+  occupancy_threshold: 50
+
+# Output configuration
+output:
+  # Output map file path (equivalent to --out-map)
+  map_file: "output_topo.json"
+  
+  # Output GVD visualization image (equivalent to --out-gvd)
+  gvd_image: "output_gvd.png"
+  
+  # Output topological map visualization (equivalent to --out-topo-image)
+  topo_image: "output_topo.png"
+
+# Benchmark configuration (for testing)
+benchmark:
+  # Enable benchmark mode (equivalent to --bench-w, --bench-h, --bench-occ, --seed)
+  enabled: true
+  
+  # Benchmark map dimensions
+  width: 50
+  height: 50
+  
+  # Occupancy ratio for random map generation
+  occupancy_ratio: 0.3
+  
+  # Random seed for reproducible results
+  seed: 12345
+
+# Processing parameters
+processing:
+  # Distance epsilon for GVD generation
+  distance_epsilon: 1e-6
+  
+  # Use OpenCV for processing
+  use_opencv: true
+  
+  # Topology extraction parameters
+  prune_min_length: 0.5
+  merge_radius: 0.2
+  max_trace_steps: 100000
+  
+  # Performance settings
+  use_parallel_processing: true
+  max_threads: 0  # 0 = auto-detect

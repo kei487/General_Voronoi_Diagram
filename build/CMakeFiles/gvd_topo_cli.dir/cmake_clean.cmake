@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/gvd_topo_cli.dir/src/cli_main.cpp.o"
-  "CMakeFiles/gvd_topo_cli.dir/src/cli_main.cpp.o.d"
+  "CMakeFiles/gvd_topo_cli.dir/src/cli/CliApplication.cpp.o"
+  "CMakeFiles/gvd_topo_cli.dir/src/cli/CliApplication.cpp.o.d"
+  "CMakeFiles/gvd_topo_cli.dir/src/cli/cli_main.cpp.o"
+  "CMakeFiles/gvd_topo_cli.dir/src/cli/cli_main.cpp.o.d"
   "bin/gvd_topo_cli"
   "bin/gvd_topo_cli.pdb"
 )

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.o"
-  "CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.o.d"
+  "CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.o"
+  "CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.o.d"
   "bin/test_ros_adapters"
   "bin/test_ros_adapters.pdb"
 )

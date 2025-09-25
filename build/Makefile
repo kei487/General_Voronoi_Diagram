@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named gvd_topo_core
+
+# Build rule for target.
+gvd_topo_core: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gvd_topo_core
+.PHONY : gvd_topo_core
+
+# fast build rule for target.
+gvd_topo_core/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/build
+.PHONY : gvd_topo_core/fast
+
+#=============================================================================
 # Target rules for targets named gvd_topo
 
 # Build rule for target.
@@ -181,125 +194,225 @@ regression_test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/regression_test.dir/build.make CMakeFiles/regression_test.dir/build
 .PHONY : regression_test/fast
 
-src/GvdGenerator.o: src/GvdGenerator.cpp.o
-.PHONY : src/GvdGenerator.o
+#=============================================================================
+# Target rules for targets named debug_topology
+
+# Build rule for target.
+debug_topology: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 debug_topology
+.PHONY : debug_topology
+
+# fast build rule for target.
+debug_topology/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_topology.dir/build.make CMakeFiles/debug_topology.dir/build
+.PHONY : debug_topology/fast
+
+#=============================================================================
+# Target rules for targets named debug_visualization
+
+# Build rule for target.
+debug_visualization: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 debug_visualization
+.PHONY : debug_visualization
+
+# fast build rule for target.
+debug_visualization/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_visualization.dir/build.make CMakeFiles/debug_visualization.dir/build
+.PHONY : debug_visualization/fast
+
+#=============================================================================
+# Target rules for targets named debug_new_map
+
+# Build rule for target.
+debug_new_map: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 debug_new_map
+.PHONY : debug_new_map
+
+# fast build rule for target.
+debug_new_map/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_new_map.dir/build.make CMakeFiles/debug_new_map.dir/build
+.PHONY : debug_new_map/fast
+
+#=============================================================================
+# Target rules for targets named optimized_new_map
+
+# Build rule for target.
+optimized_new_map: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 optimized_new_map
+.PHONY : optimized_new_map
+
+# fast build rule for target.
+optimized_new_map/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimized_new_map.dir/build.make CMakeFiles/optimized_new_map.dir/build
+.PHONY : optimized_new_map/fast
+
+src/cli/CliApplication.o: src/cli/CliApplication.cpp.o
+.PHONY : src/cli/CliApplication.o
 
 # target to build an object file
-src/GvdGenerator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo.dir/build.make CMakeFiles/gvd_topo.dir/src/GvdGenerator.cpp.o
-.PHONY : src/GvdGenerator.cpp.o
+src/cli/CliApplication.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_cli.dir/build.make CMakeFiles/gvd_topo_cli.dir/src/cli/CliApplication.cpp.o
+.PHONY : src/cli/CliApplication.cpp.o
 
-src/GvdGenerator.i: src/GvdGenerator.cpp.i
-.PHONY : src/GvdGenerator.i
+src/cli/CliApplication.i: src/cli/CliApplication.cpp.i
+.PHONY : src/cli/CliApplication.i
 
 # target to preprocess a source file
-src/GvdGenerator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo.dir/build.make CMakeFiles/gvd_topo.dir/src/GvdGenerator.cpp.i
-.PHONY : src/GvdGenerator.cpp.i
+src/cli/CliApplication.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_cli.dir/build.make CMakeFiles/gvd_topo_cli.dir/src/cli/CliApplication.cpp.i
+.PHONY : src/cli/CliApplication.cpp.i
 
-src/GvdGenerator.s: src/GvdGenerator.cpp.s
-.PHONY : src/GvdGenerator.s
+src/cli/CliApplication.s: src/cli/CliApplication.cpp.s
+.PHONY : src/cli/CliApplication.s
 
 # target to generate assembly for a file
-src/GvdGenerator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo.dir/build.make CMakeFiles/gvd_topo.dir/src/GvdGenerator.cpp.s
-.PHONY : src/GvdGenerator.cpp.s
+src/cli/CliApplication.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_cli.dir/build.make CMakeFiles/gvd_topo_cli.dir/src/cli/CliApplication.cpp.s
+.PHONY : src/cli/CliApplication.cpp.s
 
-src/OccupancyGrid.o: src/OccupancyGrid.cpp.o
-.PHONY : src/OccupancyGrid.o
+src/cli/cli_main.o: src/cli/cli_main.cpp.o
+.PHONY : src/cli/cli_main.o
 
 # target to build an object file
-src/OccupancyGrid.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo.dir/build.make CMakeFiles/gvd_topo.dir/src/OccupancyGrid.cpp.o
-.PHONY : src/OccupancyGrid.cpp.o
+src/cli/cli_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_cli.dir/build.make CMakeFiles/gvd_topo_cli.dir/src/cli/cli_main.cpp.o
+.PHONY : src/cli/cli_main.cpp.o
 
-src/OccupancyGrid.i: src/OccupancyGrid.cpp.i
-.PHONY : src/OccupancyGrid.i
+src/cli/cli_main.i: src/cli/cli_main.cpp.i
+.PHONY : src/cli/cli_main.i
 
 # target to preprocess a source file
-src/OccupancyGrid.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo.dir/build.make CMakeFiles/gvd_topo.dir/src/OccupancyGrid.cpp.i
-.PHONY : src/OccupancyGrid.cpp.i
+src/cli/cli_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_cli.dir/build.make CMakeFiles/gvd_topo_cli.dir/src/cli/cli_main.cpp.i
+.PHONY : src/cli/cli_main.cpp.i
 
-src/OccupancyGrid.s: src/OccupancyGrid.cpp.s
-.PHONY : src/OccupancyGrid.s
+src/cli/cli_main.s: src/cli/cli_main.cpp.s
+.PHONY : src/cli/cli_main.s
 
 # target to generate assembly for a file
-src/OccupancyGrid.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo.dir/build.make CMakeFiles/gvd_topo.dir/src/OccupancyGrid.cpp.s
-.PHONY : src/OccupancyGrid.cpp.s
+src/cli/cli_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_cli.dir/build.make CMakeFiles/gvd_topo_cli.dir/src/cli/cli_main.cpp.s
+.PHONY : src/cli/cli_main.cpp.s
 
-src/TopologyExtractor.o: src/TopologyExtractor.cpp.o
-.PHONY : src/TopologyExtractor.o
+src/core/GvdGenerator.o: src/core/GvdGenerator.cpp.o
+.PHONY : src/core/GvdGenerator.o
 
 # target to build an object file
-src/TopologyExtractor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo.dir/build.make CMakeFiles/gvd_topo.dir/src/TopologyExtractor.cpp.o
-.PHONY : src/TopologyExtractor.cpp.o
+src/core/GvdGenerator.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/core/GvdGenerator.cpp.o
+.PHONY : src/core/GvdGenerator.cpp.o
 
-src/TopologyExtractor.i: src/TopologyExtractor.cpp.i
-.PHONY : src/TopologyExtractor.i
+src/core/GvdGenerator.i: src/core/GvdGenerator.cpp.i
+.PHONY : src/core/GvdGenerator.i
 
 # target to preprocess a source file
-src/TopologyExtractor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo.dir/build.make CMakeFiles/gvd_topo.dir/src/TopologyExtractor.cpp.i
-.PHONY : src/TopologyExtractor.cpp.i
+src/core/GvdGenerator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/core/GvdGenerator.cpp.i
+.PHONY : src/core/GvdGenerator.cpp.i
 
-src/TopologyExtractor.s: src/TopologyExtractor.cpp.s
-.PHONY : src/TopologyExtractor.s
+src/core/GvdGenerator.s: src/core/GvdGenerator.cpp.s
+.PHONY : src/core/GvdGenerator.s
 
 # target to generate assembly for a file
-src/TopologyExtractor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo.dir/build.make CMakeFiles/gvd_topo.dir/src/TopologyExtractor.cpp.s
-.PHONY : src/TopologyExtractor.cpp.s
+src/core/GvdGenerator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/core/GvdGenerator.cpp.s
+.PHONY : src/core/GvdGenerator.cpp.s
 
-src/cli_main.o: src/cli_main.cpp.o
-.PHONY : src/cli_main.o
+src/core/OccupancyGrid.o: src/core/OccupancyGrid.cpp.o
+.PHONY : src/core/OccupancyGrid.o
 
 # target to build an object file
-src/cli_main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_cli.dir/build.make CMakeFiles/gvd_topo_cli.dir/src/cli_main.cpp.o
-.PHONY : src/cli_main.cpp.o
+src/core/OccupancyGrid.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/core/OccupancyGrid.cpp.o
+.PHONY : src/core/OccupancyGrid.cpp.o
 
-src/cli_main.i: src/cli_main.cpp.i
-.PHONY : src/cli_main.i
+src/core/OccupancyGrid.i: src/core/OccupancyGrid.cpp.i
+.PHONY : src/core/OccupancyGrid.i
 
 # target to preprocess a source file
-src/cli_main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_cli.dir/build.make CMakeFiles/gvd_topo_cli.dir/src/cli_main.cpp.i
-.PHONY : src/cli_main.cpp.i
+src/core/OccupancyGrid.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/core/OccupancyGrid.cpp.i
+.PHONY : src/core/OccupancyGrid.cpp.i
 
-src/cli_main.s: src/cli_main.cpp.s
-.PHONY : src/cli_main.s
+src/core/OccupancyGrid.s: src/core/OccupancyGrid.cpp.s
+.PHONY : src/core/OccupancyGrid.s
 
 # target to generate assembly for a file
-src/cli_main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_cli.dir/build.make CMakeFiles/gvd_topo_cli.dir/src/cli_main.cpp.s
-.PHONY : src/cli_main.cpp.s
+src/core/OccupancyGrid.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/core/OccupancyGrid.cpp.s
+.PHONY : src/core/OccupancyGrid.cpp.s
 
-src/create_test_maps.o: src/create_test_maps.cpp.o
-.PHONY : src/create_test_maps.o
+src/core/TopologyExtractor.o: src/core/TopologyExtractor.cpp.o
+.PHONY : src/core/TopologyExtractor.o
 
 # target to build an object file
-src/create_test_maps.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/create_test_maps.dir/build.make CMakeFiles/create_test_maps.dir/src/create_test_maps.cpp.o
-.PHONY : src/create_test_maps.cpp.o
+src/core/TopologyExtractor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/core/TopologyExtractor.cpp.o
+.PHONY : src/core/TopologyExtractor.cpp.o
 
-src/create_test_maps.i: src/create_test_maps.cpp.i
-.PHONY : src/create_test_maps.i
+src/core/TopologyExtractor.i: src/core/TopologyExtractor.cpp.i
+.PHONY : src/core/TopologyExtractor.i
 
 # target to preprocess a source file
-src/create_test_maps.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/create_test_maps.dir/build.make CMakeFiles/create_test_maps.dir/src/create_test_maps.cpp.i
-.PHONY : src/create_test_maps.cpp.i
+src/core/TopologyExtractor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/core/TopologyExtractor.cpp.i
+.PHONY : src/core/TopologyExtractor.cpp.i
 
-src/create_test_maps.s: src/create_test_maps.cpp.s
-.PHONY : src/create_test_maps.s
+src/core/TopologyExtractor.s: src/core/TopologyExtractor.cpp.s
+.PHONY : src/core/TopologyExtractor.s
 
 # target to generate assembly for a file
-src/create_test_maps.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/create_test_maps.dir/build.make CMakeFiles/create_test_maps.dir/src/create_test_maps.cpp.s
-.PHONY : src/create_test_maps.cpp.s
+src/core/TopologyExtractor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/core/TopologyExtractor.cpp.s
+.PHONY : src/core/TopologyExtractor.cpp.s
+
+src/core/Visualizer.o: src/core/Visualizer.cpp.o
+.PHONY : src/core/Visualizer.o
+
+# target to build an object file
+src/core/Visualizer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/core/Visualizer.cpp.o
+.PHONY : src/core/Visualizer.cpp.o
+
+src/core/Visualizer.i: src/core/Visualizer.cpp.i
+.PHONY : src/core/Visualizer.i
+
+# target to preprocess a source file
+src/core/Visualizer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/core/Visualizer.cpp.i
+.PHONY : src/core/Visualizer.cpp.i
+
+src/core/Visualizer.s: src/core/Visualizer.cpp.s
+.PHONY : src/core/Visualizer.s
+
+# target to generate assembly for a file
+src/core/Visualizer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/core/Visualizer.cpp.s
+.PHONY : src/core/Visualizer.cpp.s
+
+src/io/YamlLoader.o: src/io/YamlLoader.cpp.o
+.PHONY : src/io/YamlLoader.o
+
+# target to build an object file
+src/io/YamlLoader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/io/YamlLoader.cpp.o
+.PHONY : src/io/YamlLoader.cpp.o
+
+src/io/YamlLoader.i: src/io/YamlLoader.cpp.i
+.PHONY : src/io/YamlLoader.i
+
+# target to preprocess a source file
+src/io/YamlLoader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/io/YamlLoader.cpp.i
+.PHONY : src/io/YamlLoader.cpp.i
+
+src/io/YamlLoader.s: src/io/YamlLoader.cpp.s
+.PHONY : src/io/YamlLoader.s
+
+# target to generate assembly for a file
+src/io/YamlLoader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/io/YamlLoader.cpp.s
+.PHONY : src/io/YamlLoader.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -330,7 +443,7 @@ src/parameters.o: src/parameters.cpp.o
 
 # target to build an object file
 src/parameters.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo.dir/build.make CMakeFiles/gvd_topo.dir/src/parameters.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/parameters.cpp.o
 .PHONY : src/parameters.cpp.o
 
 src/parameters.i: src/parameters.cpp.i
@@ -338,7 +451,7 @@ src/parameters.i: src/parameters.cpp.i
 
 # target to preprocess a source file
 src/parameters.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo.dir/build.make CMakeFiles/gvd_topo.dir/src/parameters.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/parameters.cpp.i
 .PHONY : src/parameters.cpp.i
 
 src/parameters.s: src/parameters.cpp.s
@@ -346,39 +459,15 @@ src/parameters.s: src/parameters.cpp.s
 
 # target to generate assembly for a file
 src/parameters.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo.dir/build.make CMakeFiles/gvd_topo.dir/src/parameters.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/parameters.cpp.s
 .PHONY : src/parameters.cpp.s
-
-src/regression_test.o: src/regression_test.cpp.o
-.PHONY : src/regression_test.o
-
-# target to build an object file
-src/regression_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/regression_test.dir/build.make CMakeFiles/regression_test.dir/src/regression_test.cpp.o
-.PHONY : src/regression_test.cpp.o
-
-src/regression_test.i: src/regression_test.cpp.i
-.PHONY : src/regression_test.i
-
-# target to preprocess a source file
-src/regression_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/regression_test.dir/build.make CMakeFiles/regression_test.dir/src/regression_test.cpp.i
-.PHONY : src/regression_test.cpp.i
-
-src/regression_test.s: src/regression_test.cpp.s
-.PHONY : src/regression_test.s
-
-# target to generate assembly for a file
-src/regression_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/regression_test.dir/build.make CMakeFiles/regression_test.dir/src/regression_test.cpp.s
-.PHONY : src/regression_test.cpp.s
 
 src/ros_adapters.o: src/ros_adapters.cpp.o
 .PHONY : src/ros_adapters.o
 
 # target to build an object file
 src/ros_adapters.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo.dir/build.make CMakeFiles/gvd_topo.dir/src/ros_adapters.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/ros_adapters.cpp.o
 .PHONY : src/ros_adapters.cpp.o
 
 src/ros_adapters.i: src/ros_adapters.cpp.i
@@ -386,7 +475,7 @@ src/ros_adapters.i: src/ros_adapters.cpp.i
 
 # target to preprocess a source file
 src/ros_adapters.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo.dir/build.make CMakeFiles/gvd_topo.dir/src/ros_adapters.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/ros_adapters.cpp.i
 .PHONY : src/ros_adapters.cpp.i
 
 src/ros_adapters.s: src/ros_adapters.cpp.s
@@ -394,32 +483,200 @@ src/ros_adapters.s: src/ros_adapters.cpp.s
 
 # target to generate assembly for a file
 src/ros_adapters.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo.dir/build.make CMakeFiles/gvd_topo.dir/src/ros_adapters.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/ros_adapters.cpp.s
 .PHONY : src/ros_adapters.cpp.s
 
-src/test_ros_adapters.o: src/test_ros_adapters.cpp.o
-.PHONY : src/test_ros_adapters.o
+src/utils/ConfigManager.o: src/utils/ConfigManager.cpp.o
+.PHONY : src/utils/ConfigManager.o
 
 # target to build an object file
-src/test_ros_adapters.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ros_adapters.dir/build.make CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.o
-.PHONY : src/test_ros_adapters.cpp.o
+src/utils/ConfigManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/utils/ConfigManager.cpp.o
+.PHONY : src/utils/ConfigManager.cpp.o
 
-src/test_ros_adapters.i: src/test_ros_adapters.cpp.i
-.PHONY : src/test_ros_adapters.i
+src/utils/ConfigManager.i: src/utils/ConfigManager.cpp.i
+.PHONY : src/utils/ConfigManager.i
 
 # target to preprocess a source file
-src/test_ros_adapters.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ros_adapters.dir/build.make CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.i
-.PHONY : src/test_ros_adapters.cpp.i
+src/utils/ConfigManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/utils/ConfigManager.cpp.i
+.PHONY : src/utils/ConfigManager.cpp.i
 
-src/test_ros_adapters.s: src/test_ros_adapters.cpp.s
-.PHONY : src/test_ros_adapters.s
+src/utils/ConfigManager.s: src/utils/ConfigManager.cpp.s
+.PHONY : src/utils/ConfigManager.s
 
 # target to generate assembly for a file
-src/test_ros_adapters.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ros_adapters.dir/build.make CMakeFiles/test_ros_adapters.dir/src/test_ros_adapters.cpp.s
-.PHONY : src/test_ros_adapters.cpp.s
+src/utils/ConfigManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gvd_topo_core.dir/build.make CMakeFiles/gvd_topo_core.dir/src/utils/ConfigManager.cpp.s
+.PHONY : src/utils/ConfigManager.cpp.s
+
+tests/unit/test_ros_adapters.o: tests/unit/test_ros_adapters.cpp.o
+.PHONY : tests/unit/test_ros_adapters.o
+
+# target to build an object file
+tests/unit/test_ros_adapters.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ros_adapters.dir/build.make CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.o
+.PHONY : tests/unit/test_ros_adapters.cpp.o
+
+tests/unit/test_ros_adapters.i: tests/unit/test_ros_adapters.cpp.i
+.PHONY : tests/unit/test_ros_adapters.i
+
+# target to preprocess a source file
+tests/unit/test_ros_adapters.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ros_adapters.dir/build.make CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.i
+.PHONY : tests/unit/test_ros_adapters.cpp.i
+
+tests/unit/test_ros_adapters.s: tests/unit/test_ros_adapters.cpp.s
+.PHONY : tests/unit/test_ros_adapters.s
+
+# target to generate assembly for a file
+tests/unit/test_ros_adapters.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_ros_adapters.dir/build.make CMakeFiles/test_ros_adapters.dir/tests/unit/test_ros_adapters.cpp.s
+.PHONY : tests/unit/test_ros_adapters.cpp.s
+
+tools/create_test_maps.o: tools/create_test_maps.cpp.o
+.PHONY : tools/create_test_maps.o
+
+# target to build an object file
+tools/create_test_maps.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/create_test_maps.dir/build.make CMakeFiles/create_test_maps.dir/tools/create_test_maps.cpp.o
+.PHONY : tools/create_test_maps.cpp.o
+
+tools/create_test_maps.i: tools/create_test_maps.cpp.i
+.PHONY : tools/create_test_maps.i
+
+# target to preprocess a source file
+tools/create_test_maps.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/create_test_maps.dir/build.make CMakeFiles/create_test_maps.dir/tools/create_test_maps.cpp.i
+.PHONY : tools/create_test_maps.cpp.i
+
+tools/create_test_maps.s: tools/create_test_maps.cpp.s
+.PHONY : tools/create_test_maps.s
+
+# target to generate assembly for a file
+tools/create_test_maps.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/create_test_maps.dir/build.make CMakeFiles/create_test_maps.dir/tools/create_test_maps.cpp.s
+.PHONY : tools/create_test_maps.cpp.s
+
+tools/debug_tools/debug_new_map.o: tools/debug_tools/debug_new_map.cpp.o
+.PHONY : tools/debug_tools/debug_new_map.o
+
+# target to build an object file
+tools/debug_tools/debug_new_map.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_new_map.dir/build.make CMakeFiles/debug_new_map.dir/tools/debug_tools/debug_new_map.cpp.o
+.PHONY : tools/debug_tools/debug_new_map.cpp.o
+
+tools/debug_tools/debug_new_map.i: tools/debug_tools/debug_new_map.cpp.i
+.PHONY : tools/debug_tools/debug_new_map.i
+
+# target to preprocess a source file
+tools/debug_tools/debug_new_map.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_new_map.dir/build.make CMakeFiles/debug_new_map.dir/tools/debug_tools/debug_new_map.cpp.i
+.PHONY : tools/debug_tools/debug_new_map.cpp.i
+
+tools/debug_tools/debug_new_map.s: tools/debug_tools/debug_new_map.cpp.s
+.PHONY : tools/debug_tools/debug_new_map.s
+
+# target to generate assembly for a file
+tools/debug_tools/debug_new_map.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_new_map.dir/build.make CMakeFiles/debug_new_map.dir/tools/debug_tools/debug_new_map.cpp.s
+.PHONY : tools/debug_tools/debug_new_map.cpp.s
+
+tools/debug_tools/debug_topology.o: tools/debug_tools/debug_topology.cpp.o
+.PHONY : tools/debug_tools/debug_topology.o
+
+# target to build an object file
+tools/debug_tools/debug_topology.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_topology.dir/build.make CMakeFiles/debug_topology.dir/tools/debug_tools/debug_topology.cpp.o
+.PHONY : tools/debug_tools/debug_topology.cpp.o
+
+tools/debug_tools/debug_topology.i: tools/debug_tools/debug_topology.cpp.i
+.PHONY : tools/debug_tools/debug_topology.i
+
+# target to preprocess a source file
+tools/debug_tools/debug_topology.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_topology.dir/build.make CMakeFiles/debug_topology.dir/tools/debug_tools/debug_topology.cpp.i
+.PHONY : tools/debug_tools/debug_topology.cpp.i
+
+tools/debug_tools/debug_topology.s: tools/debug_tools/debug_topology.cpp.s
+.PHONY : tools/debug_tools/debug_topology.s
+
+# target to generate assembly for a file
+tools/debug_tools/debug_topology.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_topology.dir/build.make CMakeFiles/debug_topology.dir/tools/debug_tools/debug_topology.cpp.s
+.PHONY : tools/debug_tools/debug_topology.cpp.s
+
+tools/debug_tools/debug_visualization.o: tools/debug_tools/debug_visualization.cpp.o
+.PHONY : tools/debug_tools/debug_visualization.o
+
+# target to build an object file
+tools/debug_tools/debug_visualization.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_visualization.dir/build.make CMakeFiles/debug_visualization.dir/tools/debug_tools/debug_visualization.cpp.o
+.PHONY : tools/debug_tools/debug_visualization.cpp.o
+
+tools/debug_tools/debug_visualization.i: tools/debug_tools/debug_visualization.cpp.i
+.PHONY : tools/debug_tools/debug_visualization.i
+
+# target to preprocess a source file
+tools/debug_tools/debug_visualization.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_visualization.dir/build.make CMakeFiles/debug_visualization.dir/tools/debug_tools/debug_visualization.cpp.i
+.PHONY : tools/debug_tools/debug_visualization.cpp.i
+
+tools/debug_tools/debug_visualization.s: tools/debug_tools/debug_visualization.cpp.s
+.PHONY : tools/debug_tools/debug_visualization.s
+
+# target to generate assembly for a file
+tools/debug_tools/debug_visualization.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/debug_visualization.dir/build.make CMakeFiles/debug_visualization.dir/tools/debug_tools/debug_visualization.cpp.s
+.PHONY : tools/debug_tools/debug_visualization.cpp.s
+
+tools/optimized_new_map.o: tools/optimized_new_map.cpp.o
+.PHONY : tools/optimized_new_map.o
+
+# target to build an object file
+tools/optimized_new_map.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimized_new_map.dir/build.make CMakeFiles/optimized_new_map.dir/tools/optimized_new_map.cpp.o
+.PHONY : tools/optimized_new_map.cpp.o
+
+tools/optimized_new_map.i: tools/optimized_new_map.cpp.i
+.PHONY : tools/optimized_new_map.i
+
+# target to preprocess a source file
+tools/optimized_new_map.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimized_new_map.dir/build.make CMakeFiles/optimized_new_map.dir/tools/optimized_new_map.cpp.i
+.PHONY : tools/optimized_new_map.cpp.i
+
+tools/optimized_new_map.s: tools/optimized_new_map.cpp.s
+.PHONY : tools/optimized_new_map.s
+
+# target to generate assembly for a file
+tools/optimized_new_map.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/optimized_new_map.dir/build.make CMakeFiles/optimized_new_map.dir/tools/optimized_new_map.cpp.s
+.PHONY : tools/optimized_new_map.cpp.s
+
+tools/regression_test.o: tools/regression_test.cpp.o
+.PHONY : tools/regression_test.o
+
+# target to build an object file
+tools/regression_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/regression_test.dir/build.make CMakeFiles/regression_test.dir/tools/regression_test.cpp.o
+.PHONY : tools/regression_test.cpp.o
+
+tools/regression_test.i: tools/regression_test.cpp.i
+.PHONY : tools/regression_test.i
+
+# target to preprocess a source file
+tools/regression_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/regression_test.dir/build.make CMakeFiles/regression_test.dir/tools/regression_test.cpp.i
+.PHONY : tools/regression_test.cpp.i
+
+tools/regression_test.s: tools/regression_test.cpp.s
+.PHONY : tools/regression_test.s
+
+# target to generate assembly for a file
+tools/regression_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/regression_test.dir/build.make CMakeFiles/regression_test.dir/tools/regression_test.cpp.s
+.PHONY : tools/regression_test.cpp.s
 
 # Help Target
 help:
@@ -430,40 +687,69 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... create_test_maps"
+	@echo "... debug_new_map"
+	@echo "... debug_topology"
+	@echo "... debug_visualization"
 	@echo "... gvd_topo"
 	@echo "... gvd_topo_cli"
+	@echo "... gvd_topo_core"
+	@echo "... optimized_new_map"
 	@echo "... regression_test"
 	@echo "... test_ros_adapters"
-	@echo "... src/GvdGenerator.o"
-	@echo "... src/GvdGenerator.i"
-	@echo "... src/GvdGenerator.s"
-	@echo "... src/OccupancyGrid.o"
-	@echo "... src/OccupancyGrid.i"
-	@echo "... src/OccupancyGrid.s"
-	@echo "... src/TopologyExtractor.o"
-	@echo "... src/TopologyExtractor.i"
-	@echo "... src/TopologyExtractor.s"
-	@echo "... src/cli_main.o"
-	@echo "... src/cli_main.i"
-	@echo "... src/cli_main.s"
-	@echo "... src/create_test_maps.o"
-	@echo "... src/create_test_maps.i"
-	@echo "... src/create_test_maps.s"
+	@echo "... src/cli/CliApplication.o"
+	@echo "... src/cli/CliApplication.i"
+	@echo "... src/cli/CliApplication.s"
+	@echo "... src/cli/cli_main.o"
+	@echo "... src/cli/cli_main.i"
+	@echo "... src/cli/cli_main.s"
+	@echo "... src/core/GvdGenerator.o"
+	@echo "... src/core/GvdGenerator.i"
+	@echo "... src/core/GvdGenerator.s"
+	@echo "... src/core/OccupancyGrid.o"
+	@echo "... src/core/OccupancyGrid.i"
+	@echo "... src/core/OccupancyGrid.s"
+	@echo "... src/core/TopologyExtractor.o"
+	@echo "... src/core/TopologyExtractor.i"
+	@echo "... src/core/TopologyExtractor.s"
+	@echo "... src/core/Visualizer.o"
+	@echo "... src/core/Visualizer.i"
+	@echo "... src/core/Visualizer.s"
+	@echo "... src/io/YamlLoader.o"
+	@echo "... src/io/YamlLoader.i"
+	@echo "... src/io/YamlLoader.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/parameters.o"
 	@echo "... src/parameters.i"
 	@echo "... src/parameters.s"
-	@echo "... src/regression_test.o"
-	@echo "... src/regression_test.i"
-	@echo "... src/regression_test.s"
 	@echo "... src/ros_adapters.o"
 	@echo "... src/ros_adapters.i"
 	@echo "... src/ros_adapters.s"
-	@echo "... src/test_ros_adapters.o"
-	@echo "... src/test_ros_adapters.i"
-	@echo "... src/test_ros_adapters.s"
+	@echo "... src/utils/ConfigManager.o"
+	@echo "... src/utils/ConfigManager.i"
+	@echo "... src/utils/ConfigManager.s"
+	@echo "... tests/unit/test_ros_adapters.o"
+	@echo "... tests/unit/test_ros_adapters.i"
+	@echo "... tests/unit/test_ros_adapters.s"
+	@echo "... tools/create_test_maps.o"
+	@echo "... tools/create_test_maps.i"
+	@echo "... tools/create_test_maps.s"
+	@echo "... tools/debug_tools/debug_new_map.o"
+	@echo "... tools/debug_tools/debug_new_map.i"
+	@echo "... tools/debug_tools/debug_new_map.s"
+	@echo "... tools/debug_tools/debug_topology.o"
+	@echo "... tools/debug_tools/debug_topology.i"
+	@echo "... tools/debug_tools/debug_topology.s"
+	@echo "... tools/debug_tools/debug_visualization.o"
+	@echo "... tools/debug_tools/debug_visualization.i"
+	@echo "... tools/debug_tools/debug_visualization.s"
+	@echo "... tools/optimized_new_map.o"
+	@echo "... tools/optimized_new_map.i"
+	@echo "... tools/optimized_new_map.s"
+	@echo "... tools/regression_test.o"
+	@echo "... tools/regression_test.i"
+	@echo "... tools/regression_test.s"
 .PHONY : help
 
 

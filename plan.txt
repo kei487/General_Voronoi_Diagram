@@ -1,57 +1,256 @@
-Phase 0: Project scaffolding
-- Create directories: src/, include/, data/, scripts/, tests/, cmake/
-- Configure CMake: C++17, options (BUILD_TESTS, BUILD_TOOLS), warnings, RelWithDebInfo, LTO optional
-- Dependencies: OpenCV (core,imgproc,highgui), Boost (graph), nlohmann_json or yaml-cpp
-- Targets: library (libgvd_topo) and CLI tool (gvd_topo_cli)
+# General Voronoi Diagram プロジェクト リファクタリング計画
 
-Phase 1: Core data models and I/O
-- OccupancyGrid: width, height, resolution, origin(x,y,theta), data(std::vector<int8_t>), enum Cell
-- Loaders: from image (PNG/PGM via OpenCV), from ROS-like struct
-- Preprocessing: binarization(threshold), morphology open/close, optional inflation
+## 目的
+プログラムファイルを整理し、可読性を向上させるための包括的なリファクタリング計画
 
-Phase 2: Distance Transform (EDT)
-- Use OpenCV cv::distanceTransform (L2) to compute float distance map
-- Optional fallback: Meijster algorithm (pure C++) if OpenCV disabled
+## 現状分析
 
-Phase 3: GVD extraction
-- Ridge detection by non-maximum suppression along gradient (Sobel)
-- Alternative: multi-source BFS label Voronoi; ridge where labels meet
-- Outputs: binary GVD mask and traced polylines
-- Visualization: overlay GVD on original map
+### 問題点
+1. **ファイル構造の混乱**
+   - `src/main.cpp`がプレースホルダーのみ（実際の機能なし）
+   - デバッグ用ファイルが多数散在（debug_*.cpp, test_*.cpp）
+   - テスト用ファイルがsrc/ディレクトリに混在
 
-Phase 4: Pruning and topology extraction
-- Prune spurs < min_branch_length; drop tiny components
-- Nodes: junctions(degree>=3), endpoints(degree==1); merge nearby nodes (merge_radius)
-- Edges: trace simple paths between nodes; compute polyline length
+2. **責任の分散**
+   - CLI機能が`cli_main.cpp`に集中（200行超）
+   - 設定ファイル機能が`YamlLoader.cpp`に混在
+   - パラメータ管理が複数ファイルに分散
 
-Phase 5: Graph model and serialization
-- Types: TopoNode{id,x,y}, TopoEdge{id,u,v,length,polyline}
-- Use Boost Graph Library adjacency_list with bundled properties
-- Serialize to JSON (nlohmann_json) or YAML; provide deserialization
+3. **CMake設定の不整合**
+   - ライブラリターゲットに不要な`main.cpp`を含む
+   - デバッグ用実行ファイルが多数定義
+   - ビルド設定が分散
 
-Phase 6: CLI tool (gvd_topo_cli)
-- Options: --input, --resolution, --origin, --occ-thresh, --morph, --morph-ksize,
-          --prune-length, --merge-radius, --out-map, --out-gvd, --no-opencv
-- Log timings per phase
+4. **コードの重複**
+   - 複数のデバッグ用ファイルで類似の処理
+   - ハードコードされたパスが多数存在
 
-Phase 7: Performance and quality
-- Optimize memory access; avoid copies; consider OpenMP for BFS/labeling
-- Benchmarks on ~1000x1000 maps; target few seconds
+## リファクタリング計画
 
-Phase 8: ROS-ready design (no ROS dependency yet)
-- Keep adapters for nav_msgs/OccupancyGrid-like data
-- Group parameters; structs convertible to ROS msgs
+### Phase 1: ディレクトリ構造の整理
+**目標**: プロジェクト構造を論理的に整理
 
-Phase 9: Tests and samples
-- Synthetic maps (corridors/rooms); golden JSON outputs; end-to-end test image->JSON+PNG
+#### 1.1 ディレクトリ再編成
+```
+src/
+├── core/                    # コアライブラリ機能
+│   ├── OccupancyGrid.cpp
+│   ├── GvdGenerator.cpp
+│   ├── TopologyExtractor.cpp
+│   └── Visualizer.cpp
+├── io/                      # 入出力関連
+│   ├── YamlLoader.cpp
+│   └── ImageLoader.cpp      # 新規作成
+├── utils/                   # ユーティリティ
+│   ├── Timer.cpp
+│   └── ConfigManager.cpp    # 新規作成
+├── cli/                     # CLI関連
+│   └── cli_main.cpp
+└── main.cpp                 # ライブラリ用エントリーポイント
 
-Deliverables
-- Library: include/gvd_topo/*.hpp, src/*.cpp
-- CLI: build/bin/gvd_topo_cli
-- Artifacts: data/ examples, outputs; README usage
+tools/                       # ツール類（src/から移動）
+├── create_test_maps.cpp
+├── regression_test.cpp
+└── debug_tools/
+    ├── debug_topology.cpp
+    ├── debug_visualization.cpp
+    └── debug_new_map.cpp
 
-Timeline (indicative)
-- Week 1: Phases 0-2
-- Week 2: Phases 3-4
-- Week 3: Phases 5-6
-- Week 4: Phases 7-9 and polish
+tests/                       # テスト（src/から移動）
+├── unit/
+├── integration/
+└── test_data/
+```
+
+#### 1.2 ヘッダーファイルの整理
+```
+include/gvd_topo/
+├── core/                    # コア機能
+│   ├── OccupancyGrid.hpp
+│   ├── GvdGenerator.hpp
+│   ├── TopologyExtractor.hpp
+│   └── Visualizer.hpp
+├── io/                      # 入出力
+│   ├── YamlLoader.hpp
+│   └── ImageLoader.hpp
+├── utils/                   # ユーティリティ
+│   ├── Timer.hpp
+│   └── ConfigManager.hpp
+├── cli/                     # CLI
+│   └── CliApplication.hpp
+└── gvd_topo.hpp            # メインヘッダー
+```
+
+### Phase 2: コードの分離と責任の明確化
+**目標**: 各クラス・ファイルの責任を明確化
+
+#### 2.1 CLI機能の分離
+- `CliApplication`クラスを作成
+- コマンドライン引数解析を独立したクラスに分離
+- 設定管理を`ConfigManager`クラスに統合
+
+#### 2.2 設定管理の統合
+- `YamlLoader`から設定ファイル機能を分離
+- `ConfigManager`クラスで統一管理
+- パラメータ検証機能の統合
+
+#### 2.3 入出力機能の整理
+- 画像読み込み機能を`ImageLoader`クラスに分離
+- YAML読み込み機能を`YamlLoader`に集約
+- ファイルパス管理の統一
+
+### Phase 3: 不要ファイルの整理
+**目標**: デバッグ用・テスト用ファイルを適切な場所に移動
+
+#### 3.1 デバッグツールの整理
+- `debug_*.cpp`を`tools/debug_tools/`に移動
+- 共通機能を`DebugUtils`クラスに統合
+- ハードコードされたパスを設定ファイル化
+
+#### 3.2 テストファイルの整理
+- `test_*.cpp`を`tests/`ディレクトリに移動
+- 単体テストと統合テストを分離
+- テストデータを`tests/test_data/`に集約
+
+#### 3.3 不要ファイルの削除
+- `src/main.cpp`のプレースホルダー削除
+- 重複する機能の統合
+
+### Phase 4: CMake設定の最適化
+**目標**: ビルド設定を整理し、保守性を向上
+
+#### 4.1 ターゲットの整理
+```cmake
+# コアライブラリ
+add_library(gvd_topo_core
+    src/core/*.cpp
+    src/io/*.cpp
+    src/utils/*.cpp
+)
+
+# メインライブラリ（エントリーポイント）
+add_library(gvd_topo
+    src/main.cpp
+)
+target_link_libraries(gvd_topo PRIVATE gvd_topo_core)
+
+# CLIアプリケーション
+add_executable(gvd_topo_cli
+    src/cli/cli_main.cpp
+)
+target_link_libraries(gvd_topo_cli PRIVATE gvd_topo)
+
+# ツール類
+add_subdirectory(tools)
+
+# テスト
+add_subdirectory(tests)
+```
+
+#### 4.2 ビルドオプションの整理
+- デバッグツールのビルドオプション追加
+- テストのビルドオプション追加
+- インストール設定の追加
+
+### Phase 5: コード品質の向上
+**目標**: 可読性と保守性を向上
+
+#### 5.1 命名規則の統一
+- クラス名: PascalCase
+- 関数名: camelCase
+- 定数名: UPPER_CASE
+- ファイル名: snake_case
+
+#### 5.2 コメントとドキュメントの充実
+- 各クラス・関数にDoxygenコメント追加
+- READMEの更新
+- 使用例の追加
+
+#### 5.3 エラーハンドリングの統一
+- 例外処理の統一
+- エラーメッセージの標準化
+- ログ機能の追加
+
+### Phase 6: テストの充実
+**目標**: テストカバレッジの向上
+
+#### 6.1 単体テストの追加
+- 各クラスの単体テスト
+- モックを使用したテスト
+- エッジケースのテスト
+
+#### 6.2 統合テストの改善
+- エンドツーエンドテスト
+- パフォーマンステスト
+- 回帰テストの自動化
+
+## 実装スケジュール
+
+### Week 1: ディレクトリ構造の整理
+- [ ] ディレクトリ構造の再編成
+- [ ] ファイルの移動とリネーム
+- [ ] インクルードパスの更新
+
+### Week 2: コードの分離
+- [ ] CLI機能の分離
+- [ ] 設定管理の統合
+- [ ] 入出力機能の整理
+
+### Week 3: 不要ファイルの整理
+- [ ] デバッグツールの整理
+- [ ] テストファイルの移動
+- [ ] 重複機能の統合
+
+### Week 4: CMake設定の最適化
+- [ ] ターゲットの整理
+- [ ] ビルドオプションの追加
+- [ ] インストール設定
+
+### Week 5: コード品質の向上
+- [ ] 命名規則の統一
+- [ ] コメントの充実
+- [ ] エラーハンドリングの統一
+
+### Week 6: テストの充実
+- [ ] 単体テストの追加
+- [ ] 統合テストの改善
+- [ ] テスト自動化
+
+## 期待される効果
+
+1. **可読性の向上**
+   - ファイル構造が論理的で理解しやすい
+   - 各ファイルの責任が明確
+   - コードの重複が削減
+
+2. **保守性の向上**
+   - 機能追加・修正が容易
+   - テストが充実
+   - ドキュメントが整備
+
+3. **拡張性の向上**
+   - 新しい機能の追加が容易
+   - プラグインアーキテクチャの基盤
+   - 設定の柔軟性
+
+4. **開発効率の向上**
+   - ビルド時間の短縮
+   - デバッグの容易さ
+   - チーム開発の効率化
+
+## 注意事項
+
+1. **既存機能の保持**
+   - リファクタリング中も既存機能を維持
+   - 段階的な実装でリスクを最小化
+   - 各段階でテストを実行
+
+2. **後方互換性**
+   - 既存のAPIを維持
+   - 設定ファイルの互換性を保持
+   - ドキュメントの更新
+
+3. **パフォーマンス**
+   - リファクタリングによる性能劣化を回避
+   - メモリ使用量の最適化
+   - ビルド時間の短縮

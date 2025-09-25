@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/regression_test.dir/src/regression_test.cpp.o"
-  "CMakeFiles/regression_test.dir/src/regression_test.cpp.o.d"
+  "CMakeFiles/regression_test.dir/tools/regression_test.cpp.o"
+  "CMakeFiles/regression_test.dir/tools/regression_test.cpp.o.d"
   "bin/regression_test"
   "bin/regression_test.pdb"
 )
