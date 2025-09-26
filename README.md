@@ -1,4 +1,4 @@
-# General Voronoi Diagram to Topological Map
+# Generalized Voronoi Diagram to Topological Map
 
 A C++ library for generating topological maps from occupancy grid maps using Generalized Voronoi Diagrams (GVD).
 
